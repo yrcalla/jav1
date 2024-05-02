@@ -1,0 +1,40 @@
+<DOCTYPE html>
+<html lang="en">
+   
+ <body>
+
+ <h2>Calculo de Factorial con Aproximación de Stirling</h2>
+
+ <p id="demo"></p>
+
+ <script>
+ function factorial(n) {
+    let fact = 1;
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+ }
+
+ function stirling(n) {
+    let pi = Math.PI;
+    return Math.sqrt(2 * pi * n) * Math.pow(n / Math.E, n);
+ }
+
+let n = 20;
+let realFactorial = factorial(n);
+let stirlingApprox = stirling(n);
+let error = Math.abs((realFactorial - stirlingApprox) / realFactorial);
+
+document.getElementById("demo").innerHTML = "El valor real del factorial de " + n + " es " + realFactorial +
+    ".<br>La aproximación de Stirling para el factorial de " + n + " es " + stirlingApprox +
+    ".<br>El error entre los dos valores es " + error + ".";
+</script>
+
+</body>
+   
+
+
+
+</html>
+</DOCTYPE>
